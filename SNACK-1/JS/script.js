@@ -1,4 +1,4 @@
-let number = [];
+const number = [];
 let sum = 0;
 
 while (sum < 50){
