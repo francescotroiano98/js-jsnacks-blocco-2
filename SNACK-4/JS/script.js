@@ -3,13 +3,15 @@ const firstword = prompt("Inserisci la prima parola");
 const secondword = prompt("Inserisci la seconda parola");
 
 
-function wordcomparison(firstword, secondword) {
+wordcomparison(firstword, secondword);
 
-    if (firstword.length === secondword.length) {
+function wordcomparison(wordOne, wordTwo) {
+
+    if (wordOne.length === wordTwo.length) {
 
         console.log("Le parole hanno la stessa lunghezza");
 
-    } else if (firstword.length > secondword.length) {
+    } else if (wordOne.length > wordTwo.length) {
 
         console.log("La prima parola è più lunga della seconda parola");
 
@@ -18,5 +20,3 @@ function wordcomparison(firstword, secondword) {
         console.log("La prima parola è più corta della seconda parola");
     }
 }
-
-wordcomparison(firstword, secondword);
