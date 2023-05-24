@@ -1,18 +1,55 @@
-function randomListNumber() {
+/**
+ * Function that generates an array of random unique numbers between two values (both included).
+ *
+ * @param minNum= The minimum interval for the random generated numbers
+ * @param maxNum The maximum interval for the random generated numbers
+ * @param elements The number of elements to be generated
+ * @returns The list of random unique generated numbers, or an empty array if it is not possibile to generate that amount of numbers within the given interval.
+ */
+
+function getRandomUniqueNumber( minNum, maxNum, elements ){
   
-  const numberArray = [];
+  const numbersList = [];
 
-  while (numberArray.length < 4) {
-    const randomNumber = Math.floor(Math.random() * 5) + 1;
+  if ( (maxNum - minNum) < elements ){
 
-    if (!numberArray.includes(randomNumber)) {
-      numberArray.push(randomNumber);
-    }
+      return [];
   }
 
-  return numberArray;
+  while (numbersList.length < elements){
+
+      const newRandomNumber = getRandomInt(minNum, maxNum);
+
+      if (!numbersList.includes(newRandomNumber)){
+
+          numbersList.push(newRandomNumber);
+      }
+  }
+
+  return numbersList;
 }
 
-const randomNumbers = randomListNumber();
+/**
+ * Function that generates a random number (not secure) between two values, both included.
+ *
+ * @param minumNumber the included minium value of the random generated number range.
+ * @param maximumNumber the included maximum value of the random generated number range
+ * @returns A randomly generated number.
+ */
 
-console.log(randomNumbers);
+function getRandomInt(minumNumber, maximumNumber){
+
+  const randomNumber = Math.floor( Math.random() * ( maximumNumber - minumNumber +1) + minumNumber);
+
+  return randomNumber;
+}
+
+
+const minNum = 1;
+const maxNum = 5;
+const elements = 4;
+
+
+const numbersArray = getRandomUniqueNumber(minNum, maxNum, elements);
+
+console.log(numbersArray);
