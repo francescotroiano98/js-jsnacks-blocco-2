@@ -108,13 +108,24 @@ const auto = [
 
  const autoBenzina = [];
 
+ let autoDiesel = [];
+
  for (let i = 0; i < auto.length; i++) {
 
    if (auto[i].alimentazione === 'benzina') {
 
      autoBenzina.push(auto[i]);
-     
+
    }
  }
+
+ auto.forEach((elemento) => {
+   if (elemento.alimentazione === 'diesel') {
+
+     autoDiesel.push(elemento);
+     
+   }
+ });
  
  console.log(autoBenzina);
+ console.log(autoDiesel);
