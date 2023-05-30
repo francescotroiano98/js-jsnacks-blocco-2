@@ -108,7 +108,7 @@ const auto = [
 
  const autoBenzina = [];
 
- let autoDiesel = [];
+ 
 
  for (let i = 0; i < auto.length; i++) {
 
@@ -119,13 +119,24 @@ const auto = [
    }
  }
 
+ const autoDiesel = [];
+
  auto.forEach((elemento) => {
    if (elemento.alimentazione === 'diesel') {
 
      autoDiesel.push(elemento);
-     
+
    }
  });
+ 
+ const otherCars = auto.filter((elemento) => {
+   if (elemento.alimentazione !== 'diesel' && elemento.alimentazione !== 'benzina') {
+     return true;
+   }
+   return false;
+ });
+ 
+ console.log(otherCars);
  
  console.log(autoBenzina);
  console.log(autoDiesel);
