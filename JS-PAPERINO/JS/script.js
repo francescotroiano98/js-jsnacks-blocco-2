@@ -9,16 +9,16 @@ Es: ['pippo', 'PLUTO', 'PapERino'] => ['Pippo', 'Pluto', 'Paperino']
  */
 const nameList = ['pino', 'goku', 'VEGETA', 'ERCAPITANO','Paulo', 'pippo', 'ginetto','golem', 'junior', 'senior'];
 
-const nameUppercaseList = []
+const nameUppercaseList = [];
 
 console.log(nameUppercaseList);
 
 function capitalizeFirstLetter() {
 
-  nameList.forEach(element => {
+  nameList.forEach(word => {
 
-    const formattedName = element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
-    
+    const formattedName = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+
     nameUppercaseList.push(formattedName);
 
   });
@@ -26,5 +26,5 @@ function capitalizeFirstLetter() {
 
 capitalizeFirstLetter();
 
-console.log(nameUppercaseList);
+
       
